@@ -1,0 +1,344 @@
+/* Styles for Sidebar. Scoped to this component. */
+
+.sidebar {
+  background: var(--surface, #fff);
+  border-right: 1px solid var(--border, #dde5ec);
+  padding: 0 14px 18px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: padding 0.22s ease;
+}
+
+.sidebarBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* Same 72px as .navbar, bleeding over the sidebar's side padding, so this
+     border and the navbar border form one continuous line. */
+  margin: 0 -14px;
+  height: 79px;
+  padding: 0 18px;
+  border-bottom: 1px solid var(--border, #e6ebf0);
+}
+
+.sidebarBrand > span:last-child {
+  display: grid;
+}
+
+.sidebarBrand strong {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/* The second word of the name, in the brand orange. */
+.brandAccent {
+  color: var(--orange);
+}
+
+.sidebarBrand small {
+  font-size: 0.72rem;
+  color: var(--text-secondary, #526077);
+  line-height: 1.35;
+  margin-top: 2px;
+}
+
+/* A bigger, softer tile for the logo in the sidebar only. */
+.sidebarBrand .brandTile {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #ff8a2b, var(--orange));
+  box-shadow: 0 6px 14px rgba(255, 107, 0, 0.28);
+}
+
+.sidebarSectionLabel {
+  margin: 20px 7px 9px;
+  color: var(--text-muted, #94a3b8);
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.sidebarNav {
+  display: grid;
+  gap: 4px;
+}
+
+.sidebarLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 11px;
+  border-radius: 8px;
+  color: var(--text-secondary, #334155);
+  font-size: 0.87rem;
+  font-weight: 600;
+  transition:
+    background 0.12s ease,
+    color 0.12s ease;
+}
+
+/* Mouse over a link: light orange. */
+.sidebarLink:hover {
+  background: var(--tint-orange, #fff1e6);
+  color: var(--accent-text, #b84a00);
+}
+
+/* The page you are on: a little stronger, with the orange bar on the left.
+   The text is dark orange, not white: white on light orange is hard to read. */
+.sidebarLink.active {
+  background: var(--tint-orange, #ffe3cc);
+  color: var(--accent-text, #b84a00);
+  font-weight: 700;
+  position: relative;
+}
+
+.sidebarLink.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  bottom: 7px;
+  width: 3px;
+  background: var(--orange);
+  border-radius: 3px;
+}
+
+.sidebarLink.active svg {
+  color: var(--orange);
+}
+
+.sidebarBottom {
+  border-top: 1px solid var(--border, #e6ebf0);
+  padding-top: 14px;
+}
+
+.sidebarNew {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  background: var(--orange);
+  color: #fff;
+
+  border-radius: 7px;
+  padding: 10px;
+
+  font-weight: 700;
+  font-size: 0.85rem;
+
+  margin-bottom: 14px;
+}
+
+.sidebarUser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  padding: 10px 4px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  min-width: 0;
+}
+
+.avatarToggle {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.avatarToggle:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.userText {
+  display: grid;
+  min-width: 0;
+}
+
+.userText strong {
+  font-size: 0.78rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userText small {
+  font-size: 0.65rem;
+  color: var(--text-muted, #64748b);
+}
+
+.sidebarLogout {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border: 0;
+  border-radius: 7px;
+
+  background: transparent;
+  color: var(--text-muted, #64748b);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.sidebarLogout:hover {
+  background: var(--surface-soft, #f1f5f9);
+  color: #ef4444;
+}
+
+.sidebarLogout:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+@media (min-width: 701px) {
+  .sidebar.collapsed {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .collapsed .sidebarBrand {
+    justify-content: center;
+    margin-right: -8px;
+    margin-left: -8px;
+    padding: 0;
+  }
+
+  .sidebar.collapsed .sidebarBrand > .brandText,
+  .collapsed .sidebarSectionLabel,
+  .collapsed .sidebarLink span,
+  .collapsed .sidebarNew span,
+  .collapsed .userText {
+    display: none;
+  }
+
+  .collapsed .sidebarNav {
+    gap: 6px;
+  }
+
+  .collapsed .sidebarLink {
+    justify-content: center;
+    gap: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .collapsed .sidebarNew {
+    width: 40px;
+    height: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+  }
+
+  .collapsed .sidebarUser {
+    flex-direction: column;
+    gap: 8px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .collapsed .userInfo {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  /* Phone: the sidebar becomes a bottom tab bar. */
+  .sidebar {
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    height: auto;
+    min-height: 0;
+    padding: 6px 8px;
+    border-right: 0;
+    border-top: 1px solid var(--border, #dde5ec);
+    flex-direction: row;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  /* The Navbar already shows the page title, the user and logout. */
+  .sidebarBrand,
+  .sidebarSectionLabel,
+  .sidebarAdmin,
+  .sidebarUser {
+    display: none;
+  }
+
+  /* Four links take four parts, New Question takes one. */
+  .sidebar > div:first-child {
+    flex: 4;
+    min-width: 0;
+  }
+
+  .sidebarNav {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .sidebarLink,
+  .sidebarNew {
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    padding: 6px 2px;
+    font-size: 0.65rem;
+    line-height: 1.15;
+    text-align: center;
+  }
+
+  .avatarToggle {
+    display: none;
+  }
+
+  .sidebarLink.active::before {
+    display: none;
+  }
+
+  .sidebarBottom {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .sidebarNew {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}

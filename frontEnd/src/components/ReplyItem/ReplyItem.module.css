@@ -1,0 +1,51 @@
+/* Styles for ReplyItem. Scoped to this component. */
+
+/* styles related to the reply item container */
+.replyItem {
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #dbe3ea);
+  border-radius: 10px;
+  padding: 28px;
+}
+
+.replyHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.replyAuthor {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.replyAuthor > div {
+  display: grid;
+}
+
+.replyAuthor strong {
+  font-size: 0.8rem;
+}
+
+.replyAuthor small {
+  color: var(--text-secondary, #475569);
+  font-size: 0.65rem;
+}
+
+.replyContent {
+  margin-top: 12px;
+  font-size: 0.86rem;
+  color: var(--text-secondary, #334155);
+  line-height: 1.65;
+}
+
+.replyEditActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.replyActions {
+  display: flex;
+  gap: 4px;
+}

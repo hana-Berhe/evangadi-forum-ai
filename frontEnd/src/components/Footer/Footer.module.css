@@ -1,0 +1,73 @@
+/* Styles for Footer. Scoped to this component. */
+
+.footerSpacer {
+  height: 30px;
+}
+
+.siteFooter {
+  width: 100%;
+  background: linear-gradient(
+    var(--surface-soft, #f1f5f9),
+    var(--surface, #fff) 42px
+  );
+  border-top: 1px solid var(--border, #e1e7ed);
+  /* Right side: room for the floating AI chat button (56px + its 22px gap),
+     so it never covers the last footer link. */
+  padding: 30px 104px 28px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 38px;
+}
+
+.siteFooterCopy {
+  max-width: 470px;
+}
+
+.siteFooterCopy h3 {
+  font-size: 1rem;
+  margin: 0 0 6px;
+  color: var(--text, #172033);
+}
+
+.siteFooterCopy p {
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--text-secondary, #526177);
+  margin: 0 0 7px;
+}
+
+.siteFooterCopy small {
+  font-size: 0.66rem;
+  color: var(--text-muted, #64748b);
+}
+
+.siteFooterLinks {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.siteFooterLinks a {
+  font-size: 0.74rem;
+  color: var(--text-secondary, #334155);
+}
+
+.siteFooterLinks a:hover {
+  color: var(--orange);
+}
+
+@media (max-width: 700px) {
+  .siteFooter {
+    padding: 26px 18px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 700px) {
+  .siteFooterLinks {
+    gap: 18px;
+  }
+}

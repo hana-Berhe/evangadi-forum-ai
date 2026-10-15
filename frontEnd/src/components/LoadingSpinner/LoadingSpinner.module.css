@@ -1,0 +1,10 @@
+/* Styles for LoadingSpinner. Scoped to this component. */
+
+.loadingState {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  align-content: center;
+  gap: 10px;
+}

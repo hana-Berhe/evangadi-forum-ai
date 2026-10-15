@@ -1,0 +1,61 @@
+/* Styles for Layout. Scoped to this component. */
+
+.appLayout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  background: var(--page, #f8fafc);
+  transition: grid-template-columns 0.22s ease;
+}
+
+.appLayout.sidebarCollapsed {
+  grid-template-columns: 72px 1fr;
+}
+
+.appMain {
+  min-width: 0;
+}
+
+.pageContent {
+  padding: 28px;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 980px) {
+  .appLayout {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .appLayout.sidebarCollapsed {
+    grid-template-columns: 72px 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .appLayout {
+    display: block;
+  }
+}
+
+@media (max-width: 700px) {
+  .pageContent {
+    padding: 18px;
+  }
+
+  /* Room for the bottom tab bar (Sidebar on phones). */
+  .appMain {
+    padding-bottom: 72px;
+  }
+}
+
+.appMain {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.pageContent {
+  flex: 1;
+}
