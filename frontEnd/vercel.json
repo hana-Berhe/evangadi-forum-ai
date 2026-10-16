@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://evangadi-forum-api-ateb.onrender.com/api/:path*"
+      "destination": "https://evangadi-forum-ai.onrender.com/api/:path*"
     },
     {
       "source": "/uploads/:path*",
-      "destination": "https://evangadi-forum-api-ateb.onrender.com/uploads/:path*"
+      "destination": "https://evangadi-forum-ai.onrender.com/uploads/:path*"
     },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
